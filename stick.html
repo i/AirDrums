@@ -3,6 +3,7 @@
   <head>
     <title>Drum Stick</title>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
     <script src='/socket.io/socket.io.js'></script>
     <script>
       var socket = io.connect('/');
@@ -18,9 +19,9 @@
         socket.emit('device-motion', action);
       };
 
-      document.onclick = function() {
+      $(document).on('vclick', document, function(){
         sendHit('kick');
-      };
+      });
 
 
     </script>
