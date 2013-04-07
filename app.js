@@ -9,7 +9,10 @@ app.get('/', function(req, res){
   res.sendfile(__dirname + '/index.html');
 });
 
+app.get('/stick', function(req, res){
+  res.sendfile(__dirname + '/stick.html');
+});
+
 io.sockets.on('connection', function(socket){
   console.log('connection!');
-  socket.emit('news', {hello: 'world'});
 });
