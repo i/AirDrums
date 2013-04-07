@@ -13,15 +13,15 @@
 
     <script>
 
-      var sendHit = function(drum){
-        console.log(drum);
-        socket.emit('device-motion', drum);
+      var sendHit = function(action){
+        console.log(action);
+        socket.emit('device-motion', action);
       };
 
       document.onclick = function() {
-        console.log('kick!');
-        socket.emit('device-motion', 'kick!');
+        sendHit('kick');
       };
+
 
     </script>
   </body>

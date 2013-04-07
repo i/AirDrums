@@ -17,6 +17,6 @@ io.sockets.on('connection', function(socket){
   console.log('connection!');
   socket.on('device-motion', function(data){
     console.log(data);
-    socket.emit('action', data);
+    socket.broadcast.emit('action', data);
   });
 });
