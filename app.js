@@ -21,4 +21,7 @@ io.sockets.on('connection', function(socket){
     console.log(data);
     socket.broadcast.emit('action', data);
   });
+  socket.on('testing', function(data){
+    console.log(data);
+  });
 });

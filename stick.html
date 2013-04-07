@@ -23,6 +23,24 @@
         sendHit('snare');
       });
 
+      if(window.DeviceOrientationEvent) {
+        window.addEventListener("deviceorientation", function(event) {
+          var rotateDegrees = event.alpha;
+          var leftToRight = event.gamma;
+          var frontToBack = event.beta;
+          handleOrientationEvent(frontToBack, leftToRight,
+          rotateDegrees);
+        }, false);
+      }
+
+      function handleOrientationEvent(z,x,o) {
+        var data = {
+          z: (Math.round(z)),
+          x: (Math.round(x)),
+          o: (Math.round(o))
+        };
+          socket.emit('testing', data);
+      }
 
     </script>
   </body>
