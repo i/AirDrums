@@ -15,7 +15,7 @@
 
     <script>
 
-      var angel;
+      var angle;
       var sendHit = function(action){
         console.log(action);
         socket.emit('device-motion', action);
@@ -23,19 +23,19 @@
       window.addEventListener('shake', shaken, false);
 
       function shaken(){
-        if(angel > 200){
+        if(angle > 200){
           sendHit('snare');
         }
-        if(angel < 100){
+        if(angle < 100){
           sendHit('hihat');
         }
       }
 
       $(document).on('vclick', document, function(){
-        if(angel > 200){
+        if(angle > 200){
           sendHit('snare');
         }
-        if(angel < 150){
+        if(angle < 150){
           sendHit('hihat');
         }
       });
@@ -45,7 +45,7 @@
           var rotateDegrees = event.alpha;
           var leftToRight = event.gamma;
           var frontToBack = event.beta;
-          angel = Math.round(rotateDegrees);
+          angle = Math.round(rotateDegrees);
          // handleOrientationEvent(frontToBack, leftToRight,
           //rotateDegrees);
         }, false);
