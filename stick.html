@@ -9,6 +9,20 @@
     </script>
   </head>
   <body>
+    <h1> Phone view</h1>
 
+    <script>
+
+      var sendHit = function(drum){
+        console.log(drum);
+        socket.emit('device-motion', drum);
+      };
+
+      document.onclick = function() {
+        console.log('kick!');
+        socket.emit('device-motion', 'kick!');
+      };
+
+    </script>
   </body>
 </html>
