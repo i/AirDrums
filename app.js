@@ -15,4 +15,8 @@ app.get('/stick', function(req, res){
 
 io.sockets.on('connection', function(socket){
   console.log('connection!');
+  socket.on('device-motion', function(data){
+    console.log(data);
+    socket.emit('action', data);
+  });
 });
