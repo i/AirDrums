@@ -8,10 +8,12 @@
     <script>
       var socket = io.connect('/');
       var action = function(data){
-        if(data == 'kick'){
-          console.log('test');
-          $.playSound('http://www.denhaku.com/r_box/linn/sd2.wav');
-        }
+/*        if(data == 'kick'){*/
+/*          console.log('test');*/
+/*          $.playSound('http://www.denhaku.com/r_box/linn/sd2.wav');*/
+/*        }*/
+        console.log(data);
+        $.playSound('/assets/sounds/' + data + '.wav');
       };
       socket.on('action', function(data){
         console.log(data);
