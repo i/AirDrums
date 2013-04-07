@@ -1,0 +1,21 @@
+{
+  "name": "AirDrums",
+  "version": "0.0.0",
+  "description": "Play drums yo",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ilozinski/AirDrums.git"
+  },
+  "dependencies": {
+    "express": "*",
+    "socket.io": "*"
+  },
+  "author": "Ian, Ed, Sush",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "bf5e8e76a2cfc2bf2298a8f685b2cd175579766d"
+}
