@@ -5,21 +5,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="https://raw.github.com/admsev/jquery-play-sound/master/jquery.playSound.js"></script>
     <script src='/socket.io/socket.io.js'></script>
-    <script>
-      var socket = io.connect('/');
-      var action = function(data){
-/*        if(data == 'kick'){*/
-/*          console.log('test');*/
-/*          $.playSound('http://www.denhaku.com/r_box/linn/sd2.wav');*/
-/*        }*/
-        console.log(data);
-        $.playSound('/assets/sounds/' + data + '.wav');
-      };
-      socket.on('action', function(data){
-        console.log(data);
-        action(data);
-      });
-    </script>
+    <script src="/assets/js/application.js"></script>
     <link rel="stylesheet" href="/assets/css/app.css"/>
     <link href='http://fonts.googleapis.com/css?family=Metal+Mania' rel='stylesheet' type='text/css'>
   </head>
