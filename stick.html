@@ -6,59 +6,10 @@
     <script src="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js"></script>
     <script src='/assets/js/shake.js'></script>
     <script src='/socket.io/socket.io.js'></script>
-    <script>
-      var socket = io.connect('/');
-    </script>
+    <script src="/assets/js/stick.js"></script>
   </head>
   <body>
     <h1> Phone view</h1>
 
-    <script>
-
-      var angle;
-      var sendHit = function(action){
-        console.log(action);
-        socket.emit('device-motion', action);
-      };
-      window.addEventListener('shake', shaken, false);
-
-      function shaken(){
-        if(angle > 200){
-          sendHit('snare');
-        }
-        if(angle < 100){
-          sendHit('hihat');
-        }
-      }
-
-      $(document).on('vclick', document, function(){
-        if(angle > 200){
-          sendHit('snare');
-        }
-        if(angle < 150){
-          sendHit('hihat');
-        }
-      });
-
-      if(window.DeviceOrientationEvent) {
-        window.addEventListener("deviceorientation", function(event) {
-          var rotateDegrees = event.alpha;
-          var leftToRight = event.gamma;
-          var frontToBack = event.beta;
-          angle = Math.round(rotateDegrees);
-         // handleOrientationEvent(frontToBack, leftToRight,
-          //rotateDegrees);
-        }, false);
-      }
-
-     // function handleOrientationEvent(z,x,o) {
-     //   var data = {
-     //     z: (Math.round(z)),
-     //     x: (Math.round(x)),
-     //     o: (Math.round(o))
-     //   };
-        //socket.emit('testing', data);
-     // }
-    </script>
   </body>
 </html>
