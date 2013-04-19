@@ -3,7 +3,7 @@ var express = require('express')
   , server = require('http').createServer(app)
   , io = require('socket.io').listen(server);
 
-server.listen(3000);
+server.listen(80);
 console.log('app running at 3000');
 app.use('/assets', express.static('assets'));
 

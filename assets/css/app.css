@@ -3,6 +3,11 @@ body {
   font-family: 'Metal Mania', cursive;
   text-align: center;
   font-size: 72px;
+
+}
+body a {
+  text-decoration: none;
+  color: black;
 }
 h1{
   padding-bottom: 0px;
