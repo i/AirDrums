@@ -1,17 +1,37 @@
-var socket = io.connect('/');
-var angle;
-var sendHit = function(action){
+var socket = io.connect('/')
+, angle
+, angle_offset = 0;
+
+function sendHit(action)
+{
   console.log(action);
   socket.emit('device-motion', action);
 };
+
 window.addEventListener('shake', shaken, false);
 
+
 function shaken(){
-  if(angle > 200){
-    sendHit('snare');
+  if(angle <= 45){
+    sendHit('crash');
   }
-  if(angle < 100){
+  if(angle > 45 && angle <= 90){
+    sendHit('tom1');
+  }
+  if(angle > 90 && angle <= 135){
+    sendHit('tom2');
+  }
+  if(angle > 135 && angle <= 225){
+    sendHit('cowbell');
+  }
+  if(angle > 225 && angle <= 270){
+    sendHit('china');
+  }
+  if(angle > 270 && angle <= 315){
     sendHit('hihat');
+  }
+  if(angle > 315){
+    sendHit('snare');
   }
 }
 

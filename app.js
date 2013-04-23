@@ -1,10 +1,11 @@
 var express = require('express')
   , app = express()
   , server = require('http').createServer(app)
-  , io = require('socket.io').listen(server);
+  , io = require('socket.io').listen(server)
+  , port = 8080;
 
-server.listen(80);
-console.log('app running at 80');
+server.listen(port);
+console.log('app running at localhost:' + port);
 app.use('/assets', express.static('assets'));
 
 app.get('/', function(req, res){
