@@ -1,7 +1,11 @@
 var socket = io.connect('/');
-var snare = new Audio('/assets/sounds/snare.mp3');
-var hihat = new Audio('/assets/sounds/hihat.mp3');
-var cow = new Audio('/assets/sounds/cow.mp3');
+var snare = new Audio('/assets/sounds/snare.wav');
+var hihat = new Audio('/assets/sounds/hihat.wav');
+var cowbell = new Audio('/assets/sounds/cowbell.wav');
+var tom1 = new Audio('/assets/sounds/tom1.wav');
+var tom2 = new Audio('/assets/sounds/tom2.wav');
+var ride = new Audio('assets/sounds/ride.wav');
+var crash = new Audio('assets/sounds/crash.wav');
 
 socket.on('action', function(data){
   console.log(data);
@@ -9,8 +13,16 @@ socket.on('action', function(data){
     snare.play();
   else if (data === 'hihat')
     hihat.play();
-  else if (data === 'cow')
-    cow.play();
+  else if (data === 'cowbell')
+    cowbell.play();
+  else if (data === 'tom1')
+    tom1.play();
+  else if (data === 'tom2')
+    tom2.play();
+  else if (data === 'crash')
+    crash.play();
+  else if (data === 'ride')
+    ride.play();
 });
 
 //GA

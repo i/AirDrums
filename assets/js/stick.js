@@ -26,7 +26,7 @@ function shaken(){
       sendHit('cowbell');
     }
     if(angle > 225 && angle <= 270){
-      sendHit('china');
+      sendHit('ride');
     }
     if(angle > 270 && angle <= 315){
       sendHit('hihat');
@@ -43,7 +43,7 @@ function shaken(){
       sendHit('hihat');
     }
     if(angle > 90 && angle <= 135){
-      sendHit('china');
+      sendHit('ride');
     }
     if(angle > 135 && angle <= 225){
       sendHit('cowbell');
