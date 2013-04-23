@@ -1,7 +1,7 @@
 var socket = io.connect('/');
 var action = function(data){
   console.log(data);
-  $.playSound('/assets/sounds/' + data + '.wav');
+  $.playSound('/assets/sounds/' + data + '.mp3');
 };
 socket.on('action', function(data){
   console.log(data);

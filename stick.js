@@ -10,7 +10,7 @@ function shaken(){
   if(angle > 200){
     sendHit('snare');
   }
-  if(angle < 100){
+  if(angle < 150){
     sendHit('hihat');
   }
 }
