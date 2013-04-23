@@ -4,7 +4,7 @@ var express = require('express')
   , io = require('socket.io').listen(server);
 
 server.listen(80);
-console.log('app running at 3000');
+console.log('app running at 80');
 app.use('/assets', express.static('assets'));
 
 app.get('/', function(req, res){
