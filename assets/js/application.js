@@ -11,7 +11,7 @@ var crash = AudioFX('/assets/sounds/crash', { formats: ['mp3'], pool: 5 } );
 var sessionID = Math.round(Math.random()*1171).toString();
 $('#key').text(sessionID);
 
-socket.emit('join', 'testID');
+socket.emit('join', sessionID);
 
 socket.on('action', function(data){
   console.log(data);

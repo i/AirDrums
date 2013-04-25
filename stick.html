@@ -11,8 +11,22 @@
   <body>
     <h1> Phone view</h1>
 
+    <form>
+      Enter your Session ID: <input type="text" id="session">
+    </form>
+    <button onclick="derp()">Click Me</button>
+
+    <div id="kick" style="width:400px;height:400px;background-color:red;">
+
+
+    </div>
+
     <script>
-      socket.emit('join', 'testID');
+      function derp(){
+        console.log($("#session").val());
+        joinSession($("#session").val());
+      }
     </script>
+
   </body>
 </html>

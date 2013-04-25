@@ -9,6 +9,10 @@ function sendHit(action)
   socket.emit('device-motion', action);
 };
 
+function joinSession(sessionID) {
+  socket.emit('join', sessionID);
+}
+
 window.addEventListener('shake', shaken, false);
 
 function shaken(){
@@ -60,7 +64,7 @@ function shaken(){
   }
 }
 
-$(document).on('vclick', document, function(){
+$(document).on('vclick', "#kick", function(){
   shaken();
 });
 
