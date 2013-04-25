@@ -7,26 +7,20 @@
     <script src='/assets/js/shake.js'></script>
     <script src='/socket.io/socket.io.js'></script>
     <script src="/assets/js/stick.js"></script>
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.css" />
   </head>
   <body>
-    <h1> Phone view</h1>
 
-    <form>
-      Enter your Session ID: <input type="text" id="session">
+    <form id="sessionForm" style="text-align:center;">
+      <h1 style="text-align:center;"> Phone View</h1>
+      <label>Enter your Session ID:</label>
+      <input type="text" id="session">
+      <button onclick="joinSession($('#session').val());return false">Click Me</button>
     </form>
-    <button onclick="derp()">Click Me</button>
 
-    <div id="kick" style="width:400px;height:400px;background-color:red;">
-
-
+    <div id="kick" style="width:100%;height:400px;">
+      <img src="/assets/images/bassdrum.png" alt="" style="display:block;margin-left:auto;margin-right:auto"/>
     </div>
-
-    <script>
-      function derp(){
-        console.log($("#session").val());
-        joinSession($("#session").val());
-      }
-    </script>
 
   </body>
 </html>
