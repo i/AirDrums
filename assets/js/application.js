@@ -9,7 +9,7 @@ var ride = AudioFX('/assets/sounds/ride', { formats: ['mp3'], pool: 5 } );
 var crash = AudioFX('/assets/sounds/crash', { formats: ['mp3'], pool: 5 } );
 
 var sessionID = Math.round(Math.random()*1171).toString();
-$('#key').text(sessionID);
+$('#key').append(sessionID);
 
 socket.emit('join', sessionID);
 
