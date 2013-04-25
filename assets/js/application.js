@@ -7,6 +7,7 @@ var tom1 = AudioFX('/assets/sounds/tom1', { formats: ['mp3'], pool: 5 } );
 var tom2 = AudioFX('/assets/sounds/tom2', { formats: ['mp3'], pool: 5 } );
 var ride = AudioFX('/assets/sounds/ride', { formats: ['mp3'], pool: 5 } );
 var crash = AudioFX('/assets/sounds/crash', { formats: ['mp3'], pool: 5 } );
+var kick = AudioFX('/assets/sounds/kick', { formats: ['mp3'], pool: 5 } );
 
 var sessionID = Math.round(Math.random()*1171).toString();
 $('#key').append(sessionID);
@@ -29,6 +30,8 @@ socket.on('action', function(data){
     crash.play();
   else if (data === 'ride')
     ride.play();
+  else if (data === 'kick')
+    kick.play();
 });
 
 //GA

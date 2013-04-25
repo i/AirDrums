@@ -65,7 +65,7 @@ function shaken() {
 }
 
 $(document).on('vclick', "#kick", function() {
-  shaken();
+  sendHit('kick');
 });
 
 if(window.DeviceOrientationEvent) {
@@ -88,3 +88,8 @@ if(window.DeviceOrientationEvent) {
 // socket.emit('testing', data);
 // }
 
+$.mobile.loadingMessage = false;
+
+$(document).bind( "mobileinit", function(event) {
+  $.extend($.mobile.zoom, {locked:true,enabled:false});
+});
