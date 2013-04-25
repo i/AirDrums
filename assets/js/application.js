@@ -11,9 +11,9 @@ var crash = AudioFX('/assets/sounds/crash', { formats: ['mp3'], pool: 5 } );
 var sessionID = Math.round(Math.random()*1171).toString();
 $('#key').text(sessionID);
 
-socket.join(sessionID);
+socket.emit('join', 'testID');
 
-socket.on(sessionID, function(data){
+socket.on('action', function(data){
   console.log(data);
   if (data === 'snare')
     snare.play();

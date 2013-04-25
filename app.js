@@ -18,9 +18,22 @@ app.get('/stick', function(req, res){
 
 io.sockets.on('connection', function(socket){
   console.log('connection!');
+  socket.on('join', function(sessionID){
+    socket.set('sessionID', sessionID, function(){
+      socket.join(sessionID);
+    });
+  });
   socket.on('device-motion', function(data){
-    console.log(data);
-    socket.broadcast.emit('action', data);
+    socket.get('sessionID', function(err, sessionID){
+      if (err) {
+        console.log(err);
+      } else if (sessionID) {
+        console.log(data);
+        socket.broadcast.to(sessionID).emit('action', data);
+      } else {
+        console.log("No sessionID");
+      }
+    });
   });
   socket.on('testing', function(data){
     console.log(data);
