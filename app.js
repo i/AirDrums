@@ -2,18 +2,22 @@ var express = require('express')
   , app = express()
   , server = require('http').createServer(app)
   , io = require('socket.io').listen(server)
-  , port = 80;
+  , port = 8080;
 
 server.listen(port);
 console.log('app running at localhost:' + port);
 app.use('/assets', express.static('assets'));
 
 app.get('/', function(req, res){
-  res.sendfile(__dirname + '/index.html');
+  res.sendfile(__dirname + '/views/index.html');
 });
 
 app.get('/stick', function(req, res){
-  res.sendfile(__dirname + '/stick.html');
+  res.sendfile(__dirname + '/views/stick.html');
+});
+
+app.get('/about', function(req, res){
+  res.sendfile(__dirname + '/views/about.html');
 });
 
 io.sockets.on('connection', function(socket){
