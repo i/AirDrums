@@ -8,7 +8,12 @@ var tom2 = AudioFX('/assets/sounds/tom2', { formats: ['mp3'], pool: 5 } );
 var ride = AudioFX('/assets/sounds/ride', { formats: ['mp3'], pool: 5 } );
 var crash = AudioFX('/assets/sounds/crash', { formats: ['mp3'], pool: 5 } );
 
-socket.on('action', function(data){
+var sessionID = Math.round(Math.random()*1171).toString();
+$('#key').text(sessionID);
+
+socket.join(sessionID);
+
+socket.on(sessionID, function(data){
   console.log(data);
   if (data === 'snare')
     snare.play();
