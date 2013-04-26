@@ -1,5 +1,8 @@
-var socket = io.connect('/');
+if (screen.width <= 699) {
+  document.location = "stick";
+}
 
+var socket = io.connect('/');
 var snare = AudioFX('/assets/sounds/snare', { formats: ['mp3'], pool: 5 } );
 var hihat = AudioFX('/assets/sounds/hihat', { formats: ['mp3'], pool: 5 } );
 var cowbell = AudioFX('/assets/sounds/cowbell', { formats: ['mp3'], pool: 5 } );
@@ -16,30 +19,47 @@ socket.emit('join', sessionID);
 
 socket.on('action', function(data){
   console.log(data);
-  if (data === 'snare')
-    snare.play();
-  else if (data === 'hihat')
-    hihat.play();
-  else if (data === 'cowbell')
-    cowbell.play();
-  else if (data === 'tom1')
-    tom1.play();
-  else if (data === 'tom2')
-    tom2.play();
-  else if (data === 'crash')
-    crash.play();
-  else if (data === 'ride')
-    ride.play();
-  else if (data === 'kick')
-    kick.play();
+  switch (data) {
+    case (data === 'snare'):
+      snare.play();
+      break;
+    case (data === 'hihat'):
+      hihat.play();
+      break;
+    case (data === 'cowbell'):
+      cowbell.play();
+      break;
+    case (data === 'tom1'):
+      tom1.play();
+      break;
+    case (data === 'tom2'):
+      tom2.play();
+      break;
+    case (data === 'crash'):
+      crash.play();
+      break;
+    case (data === 'ride'):
+      ride.play();
+      break;
+    case (data === 'kick'):
+      kick.play();
+      break;
+  }
 });
 
 //GA
+// (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+// (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
+// Date();a=s.createElement(o),
+// m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+// })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+// ga('create', 'UA-40016705-2', 'eddiezane.me');
+// ga('send', 'pageview');
 (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new
-  Date();a=s.createElement(o),
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-ga('create', 'UA-40016705-2', 'eddiezane.me');
+
+ga('create', 'UA-40016705-4', 'airdrum.co');
 ga('send', 'pageview');
 
