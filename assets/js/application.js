@@ -3,14 +3,14 @@ if (screen.width <= 699) {
 }
 
 var socket = io.connect('/');
-var snare = AudioFX('/assets/sounds/snare', { formats: ['mp3'], pool: 5 } );
-var hihat = AudioFX('/assets/sounds/hihat', { formats: ['mp3'], pool: 5 } );
-var cowbell = AudioFX('/assets/sounds/cowbell', { formats: ['mp3'], pool: 5 } );
-var tom1 = AudioFX('/assets/sounds/tom1', { formats: ['mp3'], pool: 5 } );
-var tom2 = AudioFX('/assets/sounds/tom2', { formats: ['mp3'], pool: 5 } );
-var ride = AudioFX('/assets/sounds/ride', { formats: ['mp3'], pool: 5 } );
-var crash = AudioFX('/assets/sounds/crash', { formats: ['mp3'], pool: 5 } );
-var kick = AudioFX('/assets/sounds/kick', { formats: ['mp3'], pool: 5 } );
+var snare = AudioFX('/assets/sounds/snare', { formats: ['mp3'], pool: 5, volume: 1.0 } );
+var hihat = AudioFX('/assets/sounds/hihat', { formats: ['mp3'], pool: 5, volume: 1.0 } );
+var cowbell = AudioFX('/assets/sounds/cowbell', { formats: ['mp3'], pool: 5, volume: 1.0 } );
+var tom1 = AudioFX('/assets/sounds/tom1', { formats: ['mp3'], pool: 5, volume: 1.0 } );
+var tom2 = AudioFX('/assets/sounds/tom2', { formats: ['mp3'], pool: 5, volume: 1.0 } );
+var ride = AudioFX('/assets/sounds/ride', { formats: ['mp3'], pool: 5, volume: 1.0 } );
+var crash = AudioFX('/assets/sounds/crash', { formats: ['mp3'], pool: 5, volume: 1.0 } );
+var kick = AudioFX('/assets/sounds/kick', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 
 var sessionID = Math.round(Math.random()*1171).toString();
 $('#key').append(sessionID);
@@ -19,32 +19,22 @@ socket.emit('join', sessionID);
 
 socket.on('action', function(data){
   console.log(data);
-  switch (data) {
-    case (data === 'snare'):
-      snare.play();
-      break;
-    case (data === 'hihat'):
-      hihat.play();
-      break;
-    case (data === 'cowbell'):
-      cowbell.play();
-      break;
-    case (data === 'tom1'):
-      tom1.play();
-      break;
-    case (data === 'tom2'):
-      tom2.play();
-      break;
-    case (data === 'crash'):
-      crash.play();
-      break;
-    case (data === 'ride'):
-      ride.play();
-      break;
-    case (data === 'kick'):
-      kick.play();
-      break;
-  }
+  if (data === 'snare')
+  snare.play();
+  else if (data === 'hihat')
+  hihat.play();
+  else if (data === 'cowbell')
+  cowbell.play();
+  else if (data === 'tom1')
+  tom1.play();
+  else if (data === 'tom2')
+  tom2.play();
+  else if (data === 'crash')
+  crash.play();
+  else if (data === 'ride')
+  ride.play();
+  else if (data === 'kick')
+  kick.play();
 });
 
 //GA
