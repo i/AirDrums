@@ -1,5 +1,8 @@
-#container {
+body {
   background: url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/textured_paper.png');
+}
+
+#container {
   font-family: 'Metal Mania', cursive;
   text-align: center;
   font-size: 36px 
@@ -13,4 +16,9 @@
 #container h1 {
   padding-bottom: 0px;
   margin-bottom: 0px;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 0;
 }
