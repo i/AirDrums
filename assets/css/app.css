@@ -2,6 +2,19 @@ body {
   background: url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/textured_paper.png');
 }
 
+#box {
+  width: 60%;
+  background: #0F5F78;
+  margin: 0 auto;
+  margin-top: 13px;
+  margin-bottom: 13px;
+  color: #FFFFFF;
+  box-shadow:0 8px 40px #000;
+  border-radius: 5px;
+  overflow: hidden;
+  box-sizing: content-box;
+}
+
 #container {
   font-family: 'Metal Mania', cursive;
   text-align: center;
