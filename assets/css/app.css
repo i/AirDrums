@@ -1,9 +1,10 @@
 body {
-  background: url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/textured_paper.png');
+  background: url('/assets/images/brickbg.jpg');
+  background-size: 100% 100%;
 }
 
 #box {
-  width: 60%;
+  width: 40%;
   background: #0F5F78;
   margin: 0 auto;
   margin-top: 13px;
@@ -12,7 +13,13 @@ body {
   box-shadow:0 8px 40px #000;
   border-radius: 5px;
   overflow: hidden;
-  box-sizing: content-box;
+}
+
+#box img {
+  width: 99%;
+  margin-top: 5px;
+  height: 100%;
+  border-radius: 10px;
 }
 
 #container {
@@ -21,9 +28,15 @@ body {
   font-size: 36px 
 }
 
+
 #container a {
   text-decoration: none;
-  color: black;
+  color: white;
+}
+
+#box a {
+  text-decoration: none;
+  color: #ffda47;
 }
 
 #container h1 {
