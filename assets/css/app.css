@@ -73,11 +73,23 @@ body {
   margin-bottom: 0px;
 }
 
+#dig {
+  width: 75%;
+  padding-top:25px;
+  padding-bottom:50px;
+}
+
 ul {
   list-style-type: none;
   padding-left: 0;
 }
 
+li {
+  vertical-align: middle;
+}
+
 li img {
+  width: 80%;
+  vertical-align: middle;
   border-radius: 10px;
 }
