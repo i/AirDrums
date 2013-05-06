@@ -93,3 +93,19 @@ li img {
   vertical-align: middle;
   border-radius: 10px;
 }
+
+#express {
+  padding-top: 28px;
+}
+
+#socket {
+  padding-top: 15px;
+}
+
+#zurb {
+  padding-top: 85px;
+}
+
+#jQuery {
+  padding-top: 50px;
+}
