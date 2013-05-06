@@ -17,48 +17,36 @@ window.addEventListener('shake', shaken, false);
 
 function shaken() {
   if (iphone === -1) {
-    if(angle <= 45) {
+    if(angle <= 72) {
       sendHit('crash');
     }
-    if(angle > 45 && angle <= 90) {
+    if(angle > 72 && angle <= 144) {
       sendHit('tom1');
     }
-    if(angle > 90 && angle <= 135) {
-      sendHit('tom2');
-    }
-    if(angle > 135 && angle <= 225) {
+    if(angle > 144 && angle <= 216) {
       sendHit('cowbell');
     }
-    if(angle > 225 && angle <= 270) {
+    if(angle > 216 && angle <= 288) {
       sendHit('ride');
     }
-    if(angle > 270 && angle <= 315) {
-      sendHit('hihat');
-    }
-    if(angle > 315) {
+    if(angle > 288) {
       sendHit('snare');
     }
   }
   else {
-    if(angle <= 45) {
+    if(angle <= 72) {
       sendHit('snare');
     }
-    if(angle > 45 && angle <= 90) {
-      sendHit('hihat');
-    }
-    if(angle > 90 && angle <= 135) {
+    if(angle > 72 && angle <= 144) {
       sendHit('ride');
     }
-    if(angle > 135 && angle <= 225) {
+    if(angle > 144 && angle <= 216) {
       sendHit('cowbell');
     }
-    if(angle > 225 && angle <= 270) {
-      sendHit('tom2');
-    }
-    if(angle > 270 && angle <= 315) {
+    if(angle > 216 && angle <= 288) {
       sendHit('tom1');
     }
-    if(angle > 315) {
+    if(angle > 288) {
       sendHit('crash');
     }
   }
