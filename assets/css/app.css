@@ -1,18 +1,31 @@
 body {
   background: url('/assets/images/brickbg.jpg');
   background-size: 100% 100%;
+  color: white;
+  font-size: 18px;
 }
+
+#box p {
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+
+
+#box h4 {
+  margin-top: 0px;
+  margin-bottom: 12px;
+}
+
 
 #box {
   width: 40%;
-  background: #002200;
+  background: #000017;
   margin: 0 auto;
   margin-top: 13px;
   margin-bottom: 13px;
   color: #FFFFFF;
   box-shadow:0 8px 40px #000;
   border-radius: 5px;
-  overflow: hidden;
 }
 
 #box img {
@@ -20,6 +33,22 @@ body {
   margin-top: 5px;
   height: 100%;
   border-radius: 10px;
+}
+
+#about {
+  width: 75%;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow:0 8px 40px #000;
+  background: #000017;
+  margin: 0 auto;
+  margin-top:13px;
+  margin-bottom: 23px;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+#about h3 {
+  color: #FFFFCC;
 }
 
 #container {
@@ -47,4 +76,8 @@ body {
 ul {
   list-style-type: none;
   padding-left: 0;
+}
+
+li img {
+  border-radius: 10px;
 }
