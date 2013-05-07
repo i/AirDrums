@@ -77,12 +77,7 @@ var context = canvas.getContext('2d');
 var x = canvas.width / 2;
 var y = canvas.height / 2;
 var radius = canvas.width / 3;
-var labels = "                                                      s   n   a   r   e                                                       c   r   a   s   h                                                               t   o   m                                               c   o   w   b   e   l   l                                                           r   i   d   e ";
-//labels = labels + makeWordFit("crash");
-//labels = labels + makeWordFit("tom");
-//labels = labels + makeWordFit("cowbell");
-//labels = labels + makeWordFit("ride");
-console.log(labels)
+var labels = "e   l  l                                                            r   i  d    e                                                      s   n   a   r   e                                                                 c   r   a   s   h                                                        t   o   m                                                   c   o   w     b   ";
 
 function makeWordFit(str){
   var ret = "";
@@ -174,10 +169,10 @@ function drawTextAlongArc(context, str, centerX, centerY, radius, angle) {
   for(var n = 0; n < len; n++) {
     context.rotate(angle / len);
     context.save();
-    context.translate(0, -1 * radius);
+    context.translate(0, -1 * (radius + 15));
     s = str[n];
     context.fillStyle="white";
-    context.font="30pt Impact"
+    context.font="30pt Cursive"
       context.fillText(s, 0, 0);
     context.restore();
   }
