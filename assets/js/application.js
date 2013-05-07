@@ -79,7 +79,6 @@ var y = canvas.height / 2;
 var radius = canvas.width / 3;
 var labels = " Ride   Snare  Crash  Tom    Cowbell ";
 
-
 function drawKit() {
   drawCrash(false);
   drawTom(false);
@@ -88,7 +87,6 @@ function drawKit() {
   drawSnare(false);
   //  drawTextAlongArc(context, labels, x, y, radius, Math.PI * 2 );
 }
-
 
 function drawCrash(hit) {
   context.beginPath();
@@ -116,7 +114,7 @@ function drawCow(hit) {
   context.lineWidth = 100;
   if(hit)
     context.strokeStyle = "red";
-  else context.strokeStyle = "#FF3D00";
+  else context.strokeStyle = "#9a258f";
   context.stroke();
 }
 
@@ -126,7 +124,7 @@ function drawRide(hit) {
   context.lineWidth = 100;
   if(hit)
     context.strokeStyle = "red";
-  else context.strokeStyle = "#F6C48D";
+  else context.strokeStyle = "#fff265";
   context.stroke();
 }
 
@@ -136,7 +134,7 @@ function drawSnare(hit) {
   context.lineWidth = 100;
   if(hit)
     context.strokeStyle = "red";
-  else context.strokeStyle = "#7FD500";
+  else context.strokeStyle = "#f79752";
   context.stroke();
 }
 
@@ -160,3 +158,4 @@ function drawTextAlongArc(context, str, centerX, centerY, radius, angle) {
   }
   context.restore();
 }
+
