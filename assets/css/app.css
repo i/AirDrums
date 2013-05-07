@@ -1,6 +1,10 @@
 body {
-  background: url('/assets/images/brick-low-res.jpg');
-  background-size: 100% 100%;
+  background: url('/assets/images/brick-low-res.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow-y: hidden;
   color: white;
   font-size: 18px;
 }
@@ -108,4 +112,8 @@ li img {
 
 #jQuery {
   padding-top: 50px;
+}
+
+#postjoin {
+  display:none;
 }

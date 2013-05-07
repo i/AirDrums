@@ -2,7 +2,7 @@ var express = require('express')
   , app = express()
   , server = require('http').createServer(app)
   , io = require('socket.io').listen(server)
-  , port = 80;
+  , port = 8080;
 
 server.listen(port);
 console.log('app running at localhost:' + port);
@@ -24,7 +24,8 @@ io.sockets.on('connection', function(socket){
   console.log('connection!');
   socket.on('join', function(sessionID){
     socket.set('sessionID', sessionID, function(){
-      socket.join(sessionID);
+      if(socket.join(sessionID))
+        socket.broadcast.to(sessionID).emit('joined', null);
     });
   });
   socket.on('device-motion', function(data){
