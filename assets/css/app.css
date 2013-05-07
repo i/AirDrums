@@ -120,6 +120,12 @@ li img {
   padding-top: 14px;
 }
 
+#labels {
+  top: 50%;
+  position:absolute;
+  text-align:center;
+}
+
 #drumSet {
   border: 1px solid #FFFFFF;
 }
