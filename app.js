@@ -4,6 +4,9 @@ var express = require('express')
   , io = require('socket.io').listen(server)
   , port = 8080;
 
+if (process.env.NODE_ENV == 'production')
+  port = 80;
+
 server.listen(port);
 console.log('app running at localhost:' + port);
 app.use('/assets', express.static('assets'));
