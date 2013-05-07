@@ -116,4 +116,11 @@ li img {
 
 #postjoin {
   display:none;
+  padding-top: 14px;
+}
+
+#drumSet {
+  width: 450px;
+  height: 450px;
+  border: 1px solid #FFFFFF;
 }

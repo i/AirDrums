@@ -43,3 +43,31 @@ socket.on('action', function(data){
   kick.play();
 });
 
+function dev() {
+  $('#prejoin').slideToggle();
+  $('#postjoin').slideToggle();
+}
+
+var doughnutData = [
+{
+  value: 72,
+    color:"#F7464A"
+},
+{
+  value : 72,
+  color : "#46BFBD"
+},
+{
+  value : 72,
+  color : "#FDB45C"
+},
+{
+  value : 72,
+  color : "#949FB1"
+},
+{
+  value : 72,
+  color : "#4D5360"
+}
+
+];
