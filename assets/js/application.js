@@ -9,7 +9,7 @@ var tom1 = AudioFX('/assets/sounds/tom1', { formats: ['mp3'], pool: 5, volume: 1
 var ride = AudioFX('/assets/sounds/ride', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 var crash = AudioFX('/assets/sounds/crash', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 var kick = AudioFX('/assets/sounds/kick', { formats: ['mp3'], pool: 5, volume: 1.0 } );
-//var connected = AudioFX('/assets/sounds/connected', {formats: ['mp3'], volume: 1.0 } );
+var connected = AudioFX('/assets/sounds/connected', {formats: ['mp3'], volume: 1.0 } );
 // var hihat = AudioFX('/assets/sounds/hihat', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 // var tom2 = AudioFX('/assets/sounds/tom2', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 
@@ -67,8 +67,7 @@ socket.on('action', function(data){
 function transition() {
   $('#prejoin').slideUp();
   $('#postjoin').show();
-  //connected.play();
-
+  connected.play();
   drawKit();
 }
 
@@ -107,14 +106,13 @@ function drawKit() {
 }
 
 
-
 function drawCrash(hit) {
   context.beginPath();
   context.arc(x, y, radius, radians(270), radians(270 + 72), false);
   context.lineWidth = 100;
   if(hit)
     context.strokeStyle = "red";
-  else context.strokeStyle = "green";
+  else context.strokeStyle = "#3B14AF";
   context.stroke();
 }
 
@@ -124,7 +122,7 @@ function drawTom(hit) {
   context.lineWidth = 100;
   if(hit)
     context.strokeStyle = "red";
-  else context.strokeStyle = "orange";
+  else context.strokeStyle = "#00B358";
   context.stroke();
 }
 
@@ -134,7 +132,7 @@ function drawCow(hit) {
   context.lineWidth = 100;
   if(hit)
     context.strokeStyle = "red";
-  else context.strokeStyle = "purple";
+  else context.strokeStyle = "#FF3D00";
   context.stroke();
 }
 
@@ -144,7 +142,7 @@ function drawRide(hit) {
   context.lineWidth = 100;
   if(hit)
     context.strokeStyle = "red";
-  else context.strokeStyle = "cyan";
+  else context.strokeStyle = "#F6C48D";
   context.stroke();
 }
 
@@ -154,9 +152,10 @@ function drawSnare(hit) {
   context.lineWidth = 100;
   if(hit)
     context.strokeStyle = "red";
-  else context.strokeStyle = "yellow";
+  else context.strokeStyle = "#7FD500";
   context.stroke();
 }
+
 function radians(degrees) {
   return (Math.PI/180) * degrees;
 }
