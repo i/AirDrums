@@ -9,6 +9,7 @@ var tom1 = AudioFX('/assets/sounds/tom1', { formats: ['mp3'], pool: 5, volume: 1
 var ride = AudioFX('/assets/sounds/ride', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 var crash = AudioFX('/assets/sounds/crash', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 var kick = AudioFX('/assets/sounds/kick', { formats: ['mp3'], pool: 5, volume: 1.0 } );
+var connected = AudioFX('/assets/sounds/connected', {formats: ['mp3'], volume: 1.0 } );
 // var hihat = AudioFX('/assets/sounds/hihat', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 // var tom2 = AudioFX('/assets/sounds/tom2', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 
@@ -19,8 +20,7 @@ socket.emit('join', sessionID);
 
 socket.on('joined', function() {
   console.log('joined, woohoo!');
-  $('#prejoin').slideUp();
-  $('#postjoin').slideDown();
+  transition();
 });
 
 socket.on('action', function(data){
@@ -43,8 +43,9 @@ socket.on('action', function(data){
   kick.play();
 });
 
-function dev() {
+function transition() {
   $('#prejoin').slideUp();
   $('#postjoin').slideDown();
+  connected.play();
 }
 
