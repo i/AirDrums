@@ -19,8 +19,8 @@ socket.emit('join', sessionID);
 
 socket.on('joined', function() {
   console.log('joined, woohoo!');
-  $('#prejoin').slideToggle();
-  $('#postjoin').slideToggle();
+  $('#prejoin').slideUp();
+  $('#postjoin').slideDown();
 });
 
 socket.on('action', function(data){
@@ -44,30 +44,7 @@ socket.on('action', function(data){
 });
 
 function dev() {
-  $('#prejoin').slideToggle();
-  $('#postjoin').slideToggle();
+  $('#prejoin').slideUp();
+  $('#postjoin').slideDown();
 }
 
-var doughnutData = [
-{
-  value: 72,
-    color:"#F7464A"
-},
-{
-  value : 72,
-  color : "#46BFBD"
-},
-{
-  value : 72,
-  color : "#FDB45C"
-},
-{
-  value : 72,
-  color : "#949FB1"
-},
-{
-  value : 72,
-  color : "#4D5360"
-}
-
-];
