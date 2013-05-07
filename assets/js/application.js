@@ -12,6 +12,10 @@ var kick = AudioFX('/assets/sounds/kick', { formats: ['mp3'], pool: 5, volume: 1
 var connected = AudioFX('/assets/sounds/connected', {formats: ['mp3'], volume: 1.0 } );
 // var hihat = AudioFX('/assets/sounds/hihat', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 // var tom2 = AudioFX('/assets/sounds/tom2', { formats: ['mp3'], pool: 5, volume: 1.0 } );
+var kickImg = new Image();
+kickImg.src="/assets/images/kick.png";
+var noKick = new Image();
+noKick.src="/assets/images/nokick.png";
 
 var sessionID = Math.round(Math.random()*1171).toString();
 $('#key').append(sessionID);
@@ -60,8 +64,10 @@ socket.on('action', function(data){
       drawRide(false);
     }, 40);
   }
-  else if (data === 'kick')
+  else if (data === 'kick'){
     kick.play();
+    drawKick();
+  }
 });
 
 function transition() {
@@ -102,7 +108,7 @@ function drawKit() {
   drawCow(false);
   drawRide(false);
   drawSnare(false);
-  //drawKick(false);
+  initKick();
   drawTextAlongArc(context, labels, x, y, radius + radius/4, Math.PI * 2 );
 }
 
@@ -154,6 +160,17 @@ function drawSnare(hit) {
     context.strokeStyle = "red";
   else context.strokeStyle = "#f79752";
   context.stroke();
+}
+
+function initKick() {
+    context.drawImage(noKick, x - 50, y - 50);
+}
+
+function drawKick() {
+    context.drawImage(kickImg, x - 50, y - 50);
+    setTimeout(function(){
+      context.drawImage(noKick, x - 50, y - 50);
+    }, 100);
 }
 
 function radians(degrees) {
