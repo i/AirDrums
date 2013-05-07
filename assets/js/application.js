@@ -77,7 +77,29 @@ var context = canvas.getContext('2d');
 var x = canvas.width / 2;
 var y = canvas.height / 2;
 var radius = canvas.width / 3;
-var labels = " Ride   Snare  Crash  Tom    Cowbell ";
+var labels = "                                                      s   n   a   r   e                                                       c   r   a   s   h                                                               t   o   m                                               c   o   w   b   e   l   l                                                           r   i   d   e ";
+//labels = labels + makeWordFit("crash");
+//labels = labels + makeWordFit("tom");
+//labels = labels + makeWordFit("cowbell");
+//labels = labels + makeWordFit("ride");
+console.log(labels)
+
+function makeWordFit(str){
+  var ret = "";
+  for(i=0; i<36-str.length * 4; i++){
+    ret = ret + " ";
+  }
+  for(i=0; i<str.length; i++){
+    ret = ret + str[i];
+    ret = ret + " ";
+    ret = ret + " ";
+    ret = ret + " ";
+  }
+  while (ret.length < 72){
+    ret = ret + " ";
+  }
+  return ret;
+}
 
 function drawKit() {
   drawCrash(false);
@@ -85,7 +107,8 @@ function drawKit() {
   drawCow(false);
   drawRide(false);
   drawSnare(false);
-  //  drawTextAlongArc(context, labels, x, y, radius, Math.PI * 2 );
+  //drawKick(false);
+  drawTextAlongArc(context, labels, x, y, radius + radius/4, Math.PI * 2 );
 }
 
 function drawCrash(hit) {
@@ -153,9 +176,18 @@ function drawTextAlongArc(context, str, centerX, centerY, radius, angle) {
     context.save();
     context.translate(0, -1 * radius);
     s = str[n];
-    context.fillText(s, 0, 0);
+    context.fillStyle="white";
+    context.font="30pt Impact"
+      context.fillText(s, 0, 0);
     context.restore();
   }
   context.restore();
 }
 
+/*function drawArcText(str, centerX, centerY, radius, angle1, angle2) {*/
+/**/
+/*  for(var i=0; i<str.length; i++) {*/
+/**/
+/*  }*/
+
+/*}*/
