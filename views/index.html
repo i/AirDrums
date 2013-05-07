@@ -3,7 +3,8 @@
   <head>
     <title>Drum Set</title>
     <script src='/socket.io/socket.io.js'></script>
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <!--    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>-->
+    <script src="/assets/js/jquery.js"></script>
     <script src="/assets/js/audio-fx.min.js"></script>
     <script src="/assets/js/ga.js"></script>
     <script src="/assets/js/jquery.arctext.js"></script>
@@ -18,15 +19,16 @@
       <div id="box" align="center">
         <div id="prejoin">
           <img src="/assets/images/airdrumlogo.jpg" height="400" alt="drum set" />
-          <h4><a href="/about">About</a></h4>
           <p>Go to <a href="http://airdrum.co/stick">http://airdrum.co/stick</a><br /> on your phone to play!</p>
         </div>
         <div id="postjoin">
-          <canvas id="drumSet" height=450 width=450></canvas>
+          <canvas id="drumSet" height=550 width=550></canvas>
         </div>
         <h4 id="key">Your session ID is: </h4>
+        <h4><a href="/about">About</a></h4>
       </div>
     </div>
     <script src="/assets/js/application.js"></script>
+    <script>transition()</script>
   </body>
 </html>
