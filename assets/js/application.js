@@ -45,7 +45,36 @@ socket.on('action', function(data){
 
 function transition() {
   $('#prejoin').slideUp();
-  $('#postjoin').slideDown();
+  $('#postjoin').show();
   //connected.play();
+
+  drawKit();
 }
 
+function drawKit() {
+  var canvas = document.getElementById('drumSet');
+  var context = canvas.getContext('2d');
+  var x = canvas.width / 2;
+  var y = canvas.height / 2;
+  var radius = canvas.width / 3;
+
+  for(i=0; i<359; i+=72){
+    var startAngle = radians(i);
+    var endAngle = radians(i+72);
+    var counterClockwise = false;
+
+  context.beginPath();
+  context.arc(x, y, radius, startAngle, endAngle, counterClockwise);
+  context.lineWidth = 100;
+
+  // line color
+  context.strokeStyle = "rgb(" + String((i*3)% 255) + ", " + String((i*91)%255) +
+    "," + String((i*34) % 255) + ")";
+  context.stroke();
+  }
+
+}
+
+function radians(degrees) {
+  return (Math.PI/180) * degrees;
+}
