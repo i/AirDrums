@@ -14,12 +14,10 @@ body {
   margin-bottom: 12px;
 }
 
-
 #box h4 {
   margin-top: 0px;
   margin-bottom: 12px;
 }
-
 
 #box {
   width: 40%;
@@ -55,12 +53,15 @@ body {
   color: #FFFFCC;
 }
 
+#about p {
+  padding: 0 5px 0 5px;
+}
+
 #container {
   font-family: 'Metal Mania', cursive;
   text-align: center;
   font-size: 36px 
 }
-
 
 #container a {
   text-decoration: none;
