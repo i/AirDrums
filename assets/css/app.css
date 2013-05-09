@@ -13,6 +13,10 @@ body {
   display: none;
 }
 
+#flash span {
+  color: red;
+}
+
 #box p {
   margin-top: 12px;
   margin-bottom: 12px;
