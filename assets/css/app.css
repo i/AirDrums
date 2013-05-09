@@ -9,6 +9,10 @@ body {
   font-size: 18px;
 }
 
+#flash {
+  display: none;
+}
+
 #box p {
   margin-top: 12px;
   margin-bottom: 12px;
