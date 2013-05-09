@@ -28,7 +28,7 @@ io.sockets.on('connection', function(socket){
   socket.on('join', function(sessionID){
     socket.set('sessionID', sessionID, function(){
       if(socket.join(sessionID))
-        socket.broadcast.to(sessionID).emit('joined', null);
+        socket.broadcast.to(sessionID).emit('joined', sessionID);
     });
   });
   socket.on('device-motion', function(data){

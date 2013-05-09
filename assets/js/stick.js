@@ -9,8 +9,12 @@ function sendHit(action) {
 };
 
 function joinSession(sessionID) {
-  socket.emit('join', sessionID);
-  $('#sessionForm').hide();
+  if (sessionID === "")
+    location.reload();
+  else {
+    socket.emit('join', sessionID);
+    $('#sessionForm').hide();
+  }
 }
 
 window.addEventListener('shake', shaken, false);

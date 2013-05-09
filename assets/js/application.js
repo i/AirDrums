@@ -9,7 +9,7 @@ var tom1 = AudioFX('/assets/sounds/tom1', { formats: ['mp3'], pool: 5, volume: 1
 var ride = AudioFX('/assets/sounds/ride', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 var crash = AudioFX('/assets/sounds/crash', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 var kick = AudioFX('/assets/sounds/kick', { formats: ['mp3'], pool: 5, volume: 1.0 } );
-var connected = AudioFX('/assets/sounds/connected', {formats: ['mp3'], volume: 1.0 } );
+// var connected = AudioFX('/assets/sounds/connected', {formats: ['mp3'], volume: 1.0 } );
 // var hihat = AudioFX('/assets/sounds/hihat', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 // var tom2 = AudioFX('/assets/sounds/tom2', { formats: ['mp3'], pool: 5, volume: 1.0 } );
 var kickImg = new Image();
@@ -22,8 +22,8 @@ $('#key').append(sessionID);
 
 socket.emit('join', sessionID);
 
-socket.on('joined', function() {
-  console.log('joined, woohoo!');
+socket.on('joined', function(ID) {
+  console.log('joined: ' + ID);
   transition();
 });
 
@@ -73,7 +73,7 @@ socket.on('action', function(data){
 function transition() {
   $('#prejoin').slideUp();
   $('#postjoin').show();
-  connected.play();
+  // connected.play();
   drawKit();
 }
 
@@ -163,13 +163,13 @@ function drawSnare(hit) {
 }
 
 function initKick() {
-    context.drawImage(noKick, x - 50, y - 50);
+    context.drawImage(noKick, x - 60, y - 60);
 }
 
 function drawKick() {
-    context.drawImage(kickImg, x - 50, y - 50);
+    context.drawImage(kickImg, x - 60, y - 60);
     setTimeout(function(){
-      context.drawImage(noKick, x - 50, y - 50);
+      context.drawImage(noKick, x - 60, y - 60);
     }, 100);
 }
 
