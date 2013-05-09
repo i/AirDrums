@@ -20,8 +20,11 @@ noKick.src="/assets/images/nokick.png";
 var sessionID = Math.round(Math.random()*1171).toString();
 $('#key').append(sessionID);
 
-if (typeof InstallTrigger !== 'undefined')
+if (typeof InstallTrigger !== 'undefined'){
   $('#flash').show();
+  $('#instr').hide();
+  $('#key').hide();
+}
 
 socket.emit('join', sessionID);
 
