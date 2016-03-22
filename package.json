@@ -11,8 +11,8 @@
     "url": "git://github.com/ilozinski/AirDrums.git"
   },
   "dependencies": {
-    "express": "*",
-    "socket.io": "*"
+    "express": "3.14.0",
+    "socket.io": "0.9.14"
   },
   "author": "Ian, Ed, Sush",
   "license": "MIT",
